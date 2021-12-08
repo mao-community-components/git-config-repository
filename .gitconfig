@@ -1,0 +1,32 @@
+[alias]
+  gloga = log --all --pretty='format:%d %Cgreen%h%Creset %an - %s' --graph
+
+
+
+ # branch name styling
+ branch=${branch//1;32m/38;5;214m}
+ # head styling
+ branch=${branch//1;36m/3;5;1;38;5;196m}
+ # tag styling
+ branch=${branch//1;33m/1;38;5;222m}
+
+
+lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all
+lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(bold cyan)%cn%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+
+lg3 = log --graph --abbrev-commit --decorate --format=format:'%n''%C(reset)%C(auto)%d%n''%C(bold blue)%h%n''%C(reset) - %n''%C(bold cyan)%aD%n''%C(reset) %n''%C(bold green)(%ar)%n''%C(reset)%n''%C(bold yellow)%d%n''%C(bold blue)(%s)%n''%C(reset)%n''    %C(white)%s%n''%C(reset) %C(dim white)- %an%n''%C(reset)%n'''--all
+
+
+lg4 = log --graph --abbrev-commit --decorate --format=format:'%n''%C(bold blue)%H%n''%C(reset) %h%n''%C(bold cyan)%T%n''%C(reset) %t%n''%C(bold green)(%P)%n''%C(reset)%p%n''%C(bold yellow)%an%n''%C(bold blue)(%aN)%n''%C(reset)ae%n''          %C(white)%aE%n''%C(reset) %C(dim white)- %al%n''%C(reset)%aL%n''%C(reset)%ad%n''%C(reset)%aD%n''%C(reset)%ar%n''%C(reset)%at%n''%C(reset)%aL%n''%C(reset)%ai%n''%C(reset)%aI%n''%C(reset)%as%n''%C(reset)%ah%n''%C(reset)%cn%n''%C(reset)%ce%n''%C(reset)cE%n''%C(reset)%cl%n''%C(reset)%cL%n''%C(reset)%cd%n''%C(reset)%cr%n''%C(reset)%ci%n''%C(reset)%cI%n''%C(reset)%cs%n''%C(reset)%ch%n''%C(reset)%D%n''%C(reset)%d%n''%C(reset)%ct%n''%C(reset)%aN%n''%C(reset)%ad%n'''--all
+
+#branch_all="$branch_all$(printf '%15s' \"$branch\")\n"
+
+lg5 = log --graph --format=format:"%C(auto)%>(15,trunc)%D%C(reset)"
+
+lg = !"git lg1"
+ 
+[user]
+	email = laurent.brau@gmail.com
+	name = Laurent BRAU
+[log]
+	graphColors = red,green,blue,magenta,cyan,bold red,bold green,bold blue,bold magenta,bold cyan
